@@ -1,6 +1,17 @@
 html{
     scroll-behavior: smooth;
   }
+
+  .skip{
+    position: absolute;
+    top: -25px;
+    z-index: 999;
+  }
+
+  header.skip:focus{
+    top: 10px;
+    background-color: white;
+  }
   
   header{
     display: flex;
@@ -14,6 +25,7 @@ html{
   }
 
   nav ul, .resume{
+    color: black;
     list-style: none;
     margin-right: 50px;
     padding: 0;
@@ -23,6 +35,14 @@ html{
 
   nav ul li, .resume{
     margin-right: 10px;
+  }
+
+  nav a:hover{
+    color: black;
+  }
+
+  nav a:visited{
+    color: black;
   }
   
   .icon{
@@ -109,7 +129,7 @@ html{
     line-height: 3;
     font-weight: lighter;
     font-size: 18px;
-    color: white;
+    color: black;
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -132,17 +152,23 @@ html{
     margin: 20px 0;
   }
   
+  .text-block{
+    background-color: rgba(255, 255, 255, .8);
+    border: 10px solid rgb(66, 65, 65);
+    padding: 30px;
+    margin: auto;
+  }
   
   @media screen and (prefers-reduced-motion: reduce){
     html{
-        scroll-behavior: auto; 
+        scroll-behavior: auto;
     }
   
     .skip a{
-      -webkit-transition: none; 
-      transition: none;       
+      -webkit-transition: none;
+      transition: none;
      }
-  
+
     header{
       background-attachment: initial;
     }
@@ -152,72 +178,122 @@ html{
     text-decoration: underline;
   }
   
-  .skip a{
-    position: absolute;
-    top: -40px;
-  }
-  
-  .skip:focus{
-    position: absolute;
-    top: 20px;
-  }
-  
-  .grid{
+  .container1{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 5fr 1fr;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-size: 16px;
   }
 
-#main-content{
-  font-family: 'Inter';
-  font-size: 16px;
+  .container1 h1{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.project-intro{
-  font-size: 14px;
-  
-
+.container1 h2{
+  font-size: 20px;
 }
 
-.project1, .project3{
-  margin: 20px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+.project-intro1, .project-intro2, .project-intro3, .project-intro4{
+  grid-column: 2 / span 1;
 }
 
-.project1-image, .project3-image{
-  grid-column: 2/span3;
-  width: 50%;
-  height: 50%;
-}
-
-.project2, .project4{
-  margin: 20px 40px 20px 20px;
-  grid-column: 4/span1;
-  text-align: center;
-}
-
-.project2-image, .project4-image{
-  grid-column: 1/span3;
-}
-
-.project1, .project1-image{
-  grid-row: 2;
-}
-
-.project2, .project2-image{
+.project-intro1 {
   grid-row: 3;
 }
 
-.project3, .project3-image{
-  grid-row: 4;
-}
-
-.project4, .project4-image{
+.project-intro2{
   grid-row: 5;
 }
 
+.project-intro3 {
+  grid-row: 7;
+}
+
+.project-intro4{
+  grid-row: 9;
+}
+
+.project1-image, .project2-image, .project3-image, .project4-image {
+  grid-column: 2/ span 1;
+  max-width: 700px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.project1-image{
+  grid-row: 2;
+}
+
+.project2-image{
+  grid-row: 4;
+}
+
+.project3-image{
+  grid-row: 6;
+}
+
+.project4-image{
+  grid-row: 8;
+}
+
+@media screen and (min-width: 500px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 400px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 800px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 700px;
+    max-height: 500px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 100px;
+    max-height: 700px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 1200px;
+    max-height: 1000px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1700px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 1500px;
+    max-height: 1200px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 2200px){
+  .project1-image, .project2-image, .project3-image, .project4-image {
+    grid-column: 2/ span 1;
+    max-width: 2000px;
+    max-height: 1700px;
+    overflow: hidden;
+  }
+}
 .project1-background{
   background-color: white;
   padding: 50px 100px;
@@ -284,9 +360,3 @@ html{
   .background-image{
     grid-row: 1/-1;
   } */
-  
-  @media screen and (max-width: 800px){
-  
-  
-  
-  }
